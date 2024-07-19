@@ -7,7 +7,7 @@ MIN_DATA_POINTS = 5
 COVID_START_DATE = '2020-03-06'
 
 # Read data from .xlsx file
-file_path = '~/diversification-project/bloomberg_data.xlsx'
+file_path = '~/diversification-project/input/bloomberg_data.xlsx'
 original_df = pd.read_excel(file_path, index_col=0)
 original_df = original_df.apply(pd.to_numeric, errors='coerce')
 
