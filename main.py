@@ -7,7 +7,7 @@ MIN_DATA_POINTS = 5
 COVID_START_DATE = '2020-03-06'
 
 # Read data from .xlsx file
-file_path = '~/diversification-project/input/bloomberg_data.xlsx'
+file_path = '~/Documents/Personal Projects/diversification-project/input/bloomberg_data.xlsx'
 original_df = pd.read_excel(file_path, index_col=0)
 original_df = original_df.apply(pd.to_numeric, errors='coerce')
 
@@ -106,7 +106,7 @@ for asset_name in original_df.columns:
     plt.grid(True)
 
     formatted_asset_name = ''.join(e for e in asset_name if e.isalnum())
-    filename = f"{formatted_asset_name}_corr.png"
+    filename = f"output/{formatted_asset_name}_corr.png"
     plt.savefig(filename, dpi=300, bbox_inches='tight')
     plt.close()
 
@@ -139,7 +139,7 @@ for period in ['Pre-COVID', 'Post-COVID']:
     plt.xticks(r + width / 2, assets, rotation=45)
     plt.legend()
     plt.tight_layout()
-    plt.savefig(f'{period}_correlation_bar_graph.png', dpi=300)
+    plt.savefig(f'output/{period}_correlation_bar_graph.png', dpi=300)
     plt.close()
 
 dfs_combined = {}
@@ -170,4 +170,4 @@ for period_name in ["Pre-COVID", "Post-COVID"]:
     tbl.set_fontsize(12)
     tbl.auto_set_column_width(col=list(range(len(dfs_combined[period_name].columns))))
     plt.title(f"Asset Correlations with S&P 500 ({period_name})")
-    plt.savefig(f"CombinedCorrelation_{period_name}.png", dpi=300, bbox_inches='tight')
+    plt.savefig(f"output/CombinedCorrelation_{period_name}.png", dpi=300, bbox_inches='tight')
