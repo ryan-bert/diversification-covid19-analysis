@@ -34,7 +34,7 @@ This project analyzes the effectiveness of portfolio diversification during pre-
 - `main.py`: Script for data analysis and generating plots.
 - `output/`: Directory with generated plots and tables.
 
-## main.py
+## `main.py`
 
 1. Reads and processes data from bloomberg_data.xlsx.
 2. Calculates returns and splits data into pre and post-COVID-19 periods.
